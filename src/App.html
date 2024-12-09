@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kanban Board</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.1.2/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    /* Container for all columns */
+    .columns {
+      display: flex;
+      justify-content: flex-start;  /* Align the columns to the start */
+      gap: 20px;  /* Add space between columns */
+      width: 100%;
+    }
+
+    /* Individual Kanban Column */
+    .kanban-column {
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+      padding: 10px;
+      min-width: 250px; /* Minimum width for each column */
+      flex-grow: 0;  /* Prevent the column from growing */
+      flex-shrink: 0; /* Prevent the column from shrinking */
+      flex-basis: auto; /* Allow the column to size based on its content */
+      width: auto; /* Let the column size based on its content */
+    }
+
+    /* Column Header */
+    .column-header {
+      padding: 10px;
+      background-color: #f4f4f4;
+      text-align: center;
+      border-radius: 5px;
+      margin-bottom: 10px;
+    }
+
+    .column-header h3 {
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="columns">
+    <!-- To Do Column -->
+    <div class="kanban-column">
+      <div class="column-header">
+        <h3>To Do</h3>
+      </div>
+      <div class="column-content">
+        <p>Task 1</p>
+        <p>Task 2</p>
+        <p>Task 3</p>
+      </div>
+    </div>
+
+    <!-- In Progress Column -->
+    <div class="kanban-column">
+      <div class="column-header">
+        <h3>In Progress</h3>
+      </div>
+      <div class="column-content">
+        <p>Task 4</p>
+        <p>Task 5</p>
+      </div>
+    </div>
+
+    <!-- Peer Review Column -->
+    <div class="kanban-column">
+      <div class="column-header">
+        <h3>Peer Review</h3>
+      </div>
+      <div class="column-content">
+        <p>Task 6</p>
+        <p>Task 7</p>
+      </div>
+    </div>
+
+    <!-- Done Column -->
+    <div class="kanban-column">
+      <div class="column-header">
+        <h3>Done</h3>
+      </div>
+      <div class="column-content">
+        <p>Task 8</p>
+        <p>Task 9</p>
+        <p>Task 10</p>
+        <p>Task 11</p>
+        <p>Task 12</p>
+        <p>Task 13</p>
+        <p>Task 14</p> <!-- Extra tasks to make "Done" column grow -->
+      </div>
+    </div>
+  </div>
+</body>
+</html>

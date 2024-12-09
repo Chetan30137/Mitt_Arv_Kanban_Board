@@ -1,0 +1,330 @@
+/* Global Styles */
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: #f5f5f5;
+}
+
+.kanban-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  background-image: url("D:/mitt_arv_kanban_board/src/images.png");
+  background-size: auto;
+  background-position: center top;
+  background-repeat: repeat;
+  background-attachment: fixed;
+  padding-top: 100px;
+}
+
+.board-heading {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: #000000;
+}
+
+/* Search Bar */
+.search-bar {
+  margin-bottom: 20px;
+  padding: 10px;
+  width: 80%;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+/* Board content area */
+.board-content {
+  width: 100%;
+  padding: 20px 0;
+  display: flex;
+  justify-content: flex-start;
+  gap: 20px;
+  flex-wrap: nowrap;
+  overflow-x: auto;  /* Enable horizontal scrolling if needed */
+}
+
+/* Columns Layout */
+.columns {
+  display: flex;
+  justify-content: flex-start;
+  gap: 20px;  /* Add space between columns */
+  width: 100%;
+}
+
+/* Individual Kanban Column */
+.kanban-column {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  min-width: 250px; /* Minimum width for each column */
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: auto;
+  min-height: 400px; /* Minimum height for the column */
+}
+
+.kanban-column .column-header {
+  padding: 10px;
+  background-color: #f4f4f4;
+  text-align: center;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.kanban-column .column-header h3 {
+  margin: 0;
+}
+
+/* Column Content */
+.kanban-column .column-content {
+  padding: 10px;
+  overflow-y: auto;
+  max-height: calc(100vh - 160px); /* Allows content to scroll */
+}
+
+/* Task Container */
+.tasks-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Button Container */
+.button-container {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.column-add-task {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 8px 20px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.column-add-task:hover {
+  background-color: #0056b3;
+}
+
+/* Modal Background */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  padding: 20px;
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: white;
+  padding: 40px;
+  width: 400px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  position: relative;
+}
+
+/* Input Fields */
+.input-field {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.input-field input,
+.input-field textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+
+/* Buttons in Modal */
+.modal-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.add-btn, .cancel-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 45%;
+}
+
+.add-btn {
+  background-color: #28a745;
+  color: white;
+}
+
+.cancel-btn {
+  background-color: #dc3545;
+  color: white;
+}
+
+.add-btn:hover {
+  background-color: #218838;
+}
+
+.cancel-btn:hover {
+  background-color: #c82333;
+}
+
+/* Kanban Column Drag Highlight */
+.highlight {
+  outline: 2px dashed #007bff;
+}
+
+/* Task Card Styles */
+.task-card {
+  background-color: white;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  cursor: move;
+  width: 100%;
+}
+
+.task-card h4 {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.task-card p {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.task-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Task Title */
+.task-title {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+/* Task Description */
+.task-description {
+  font-size: 0.9rem;
+  color: #777;
+}
+
+/* Kanban Board Styles */
+.kanban-container {
+  text-align: center;
+  padding: 20px;
+}
+
+.search-bar {
+  padding: 10px;
+  width: 300px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.board-content {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.kanban-column {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  width: 250px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: auto;
+}
+
+.column-header {
+  padding: 10px;
+  background-color: #f4f4f4;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.column-header h3 {
+  margin: 0;
+}
+
+/* Modal Styles */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.modal .task-input {
+  width: 100%;
+  padding: 8px;
+  margin: 8px 0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.add-btn, .cancel-btn {
+  padding: 10px 20px;
+  margin-top: 10px;
+  border: none;
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+}
+
+.cancel-btn {
+  background-color: #f44336;
+}
